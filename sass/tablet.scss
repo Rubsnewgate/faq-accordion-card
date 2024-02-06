@@ -1,0 +1,28 @@
+@import 'guide.scss';
+
+// Main Container
+.main-wrapper {
+	width: 720px;
+	height: 500px;
+}
+
+// Hero Section
+.hero__background-img {
+	left: -650px;
+}
+.hero__illustration {
+	left: -125px;
+}
+.hero__box-icon {
+	visibility: hidden;
+}
+.info__question-container {
+	width: 90%;
+}
+
+// Breakpoints
+@media (min-width: 820px) {
+	.hero__box-icon {
+		visibility: visible;
+	}
+}
