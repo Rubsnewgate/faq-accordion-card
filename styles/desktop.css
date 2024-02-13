@@ -12,9 +12,15 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0;
+  padding: 0 10px;
   background-image: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
 }
 
+@media screen and (min-width: 320px) and (max-width: 541px) {
+  body {
+    padding: 120px 10px 20px 10px;
+  }
+}
 .main-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -42,7 +48,7 @@ body {
   left: -580px;
   width: 966px;
   height: 945px;
-  background-image: url(../../assets/icons/bg-pattern-desktop.svg);
+  background-image: url(../assets/icons/bg-pattern-desktop.svg);
   transform: rotateY(180deg);
 }
 
@@ -52,7 +58,7 @@ body {
   left: -70px;
   width: 480px;
   height: 360px;
-  background-image: url(../../assets/icons/illustration-woman-online-desktop.svg);
+  background-image: url(../assets/icons/illustration-woman-online-desktop.svg);
   background-repeat: no-repeat;
 }
 
