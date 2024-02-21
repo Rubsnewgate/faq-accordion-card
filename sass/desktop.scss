@@ -67,7 +67,10 @@
 	display: flex;
 	width: 380px;
 	color: hsl(240, 6%, 50%);
-	border-bottom: 2px solid hsl(240, 5%, 91%);
+	border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+.info__question-container[open] .question .arrow-icon {
+	transform: rotate(180deg);
 }
 .question {
 	display: flex;
@@ -83,15 +86,14 @@
 .arrow-icon {
 	width: 12px;
 	height: 8px;
+	transition: transform 0.3s ease;
 	&:hover {
 		cursor: pointer;
 	}
 }
 .answer {
-	color: hsl(240, 6%, 50%);
+	margin: 0;
+	padding: 4px 0;
 	font-size: 1.4rem;
-	p {
-		margin: 0;
-		padding-bottom: 4px;
-	}
+	color: hsl(240, 6%, 50%);
 }

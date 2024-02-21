@@ -2,7 +2,7 @@
 
 // Main Container
 .main-wrapper {
-	width: 100%;
+	width: 350px;
 	height: 620px;
 	grid-template-columns: 1fr;
 	grid-template-rows: 120px 400px;
@@ -41,15 +41,22 @@
 	font-size: 2rem;
 	text-align: center;
 }
+.info__container {
+	width: 100%;
+}
 .info__question-container {
 	justify-content: space-between;
 	width: 100%;
 }
 .question {
 	font-size: 1.6rem;
+	p {
+		width: 90%;
+	}
 }
 .answer {
 	font-size: 1.3rem;
+	width: 95%;
 }
 
 // Breakpoints
@@ -61,5 +68,10 @@
 @media screen and (height: 720px) {
 	body {
 		height: auto;
+	}
+}
+@media screen and (max-width: 320px) {
+	.main-wrapper {
+		width: 100%;
 	}
 }

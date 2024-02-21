@@ -16,8 +16,9 @@ body {
   background-image: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
 }
 
-@media screen and (min-width: 320px) and (max-width: 541px) {
+@media screen and (max-width: 541px) {
   body {
+    height: auto;
     padding: 120px 10px 20px 10px;
   }
 }
@@ -95,7 +96,11 @@ body {
   display: flex;
   width: 380px;
   color: hsl(240, 6%, 50%);
-  border-bottom: 2px solid hsl(240, 5%, 91%);
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+.info__question-container[open] .question .arrow-icon {
+  transform: rotate(180deg);
 }
 
 .question {
@@ -113,18 +118,17 @@ body {
 .arrow-icon {
   width: 12px;
   height: 8px;
+  transition: transform 0.3s ease;
 }
 .arrow-icon:hover {
   cursor: pointer;
 }
 
 .answer {
-  color: hsl(240, 6%, 50%);
-  font-size: 1.4rem;
-}
-.answer p {
   margin: 0;
-  padding-bottom: 4px;
+  padding: 4px 0;
+  font-size: 1.4rem;
+  color: hsl(240, 6%, 50%);
 }
 
 /*# sourceMappingURL=desktop.css.map */
