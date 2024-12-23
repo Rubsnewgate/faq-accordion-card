@@ -1,0 +1,61 @@
+@use 'guide.sass'
+
+// main Container
+.main-wrapper
+	width: 350px
+	grid-template-columns: 1fr
+	grid-template-rows: 120px auto
+
+// hero section
+.hero__background
+	overflow: visible
+
+	&-img
+		top: 0
+		left: calc(50% - 120px)
+		width: 240px
+		height: 104px
+		background-image: url(../assets/icons/bg-pattern-mobile.svg)
+		background-repeat: no-repeat
+		rotate: 0deg
+
+.hero__illustration
+	top: -100px
+	left: calc(50% - 110px)
+	width: 220px
+	height: 180px
+	background-image: url(../assets/icons/illustration-woman-online-mobile.svg)
+
+.hero__box-icon
+	display: none
+
+// Info section
+.info
+	justify-content: flex-start
+	margin: 0
+	padding: 10px
+
+	&__title
+		font-size: 2rem
+		text-align: center
+
+	&__container
+		width: 100%
+
+	&__question-container
+		justify-content: space-between
+		width: 100%
+
+.question
+	font-size: 1.6rem
+	p
+		width: 90%
+
+.answer
+	font-size: 1.3rem
+	width: 95%
+
+// breakpoints
+@media screen and (max-width: 320px)
+	.main-wrapper
+		width: 100%
