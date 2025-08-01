@@ -1,0 +1,195 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: calc(0.5rem + 1.5625vw);
+  background-image: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-rows: 7.5rem auto;
+  width: min(100%, 56.25rem);
+  margin: 7rem auto 0;
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: white;
+  border-radius: 1.25rem;
+}
+
+.hero {
+  position: relative;
+}
+.hero__background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.hero__background-img {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 120px);
+  width: 15rem;
+  height: 6.5rem;
+  background-image: url(../assets/icons/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  rotate: 0deg;
+}
+.hero__illustration {
+  position: absolute;
+  top: -6.25rem;
+  left: calc(50% - 7rem);
+  width: 13.75rem;
+  height: 11.25rem;
+  background-image: url(../assets/icons/illustration-woman-online-mobile.svg);
+  background-repeat: no-repeat;
+}
+.hero__box-icon {
+  visibility: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+.info__title {
+  font-size: 1.25rem;
+  text-align: center;
+  color: hsl(238, 29%, 16%);
+  text-transform: uppercase;
+}
+.info__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+.info__container .info__question-container {
+  justify-content: space-between;
+  width: 100%;
+  color: hsl(240, 6%, 50%);
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+.info__container .info__question-container[open] .question .arrow-icon {
+  transform: rotate(180deg);
+}
+.info__container .info__question-container .question {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+.info__container .info__question-container .question span {
+  width: 90%;
+}
+.info__container .info__question-container .question .arrow-icon {
+  width: 0.75rem;
+  height: 0.5rem;
+  transition: transform 500ms ease-in-out;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  .info__container .info__question-container .question .arrow-icon {
+    transition: transform 0.1s ease;
+  }
+}
+.info__container .info__question-container .answer {
+  font-size: 0.75rem;
+  width: 95%;
+  padding: 0.25rem 0;
+  color: hsl(240, 6%, 50%);
+}
+
+@media screen and (min-width: 42.375rem) {
+  .main {
+    grid-template-rows: 1fr;
+    min-height: 32.5rem;
+    margin: 0 auto;
+  }
+  .hero__background {
+    overflow: hidden;
+  }
+  .hero__background-img {
+    top: -17rem;
+    left: -40.75rem;
+    width: 60.25rem;
+    height: 59rem;
+    background-image: url(../assets/icons/bg-pattern-desktop.svg);
+  }
+  .hero__illustration {
+    width: 30rem;
+    height: 22.5rem;
+    top: calc(50% - 11.25rem);
+    left: -7.75rem;
+    background-image: url(../assets/icons/illustration-woman-online-desktop.svg);
+  }
+  .hero__box-icon {
+    visibility: hidden;
+  }
+  .info {
+    justify-content: center;
+  }
+  .info__container {
+    gap: 2rem;
+  }
+  .info__container .info__question-container {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 57.5rem) {
+  .hero__background-img {
+    left: -36.25rem;
+    transform: rotateY(180deg);
+  }
+  .hero__illustration {
+    left: -4.5rem;
+  }
+  .hero__box-icon {
+    visibility: visible;
+    position: absolute;
+    top: calc(50% - 4.75rem);
+    left: -5.75rem;
+  }
+  .hero .question span {
+    width: 100%;
+  }
+  .info {
+    height: 100%;
+    padding: 1.25rem 0.5rem;
+  }
+  .info__title {
+    font-size: 1.75rem;
+  }
+  .info .info__question-container {
+    width: 95%;
+  }
+  .info .info__question-container .question {
+    font-size: 1.25rem;
+  }
+  .info .info__question-container .question:hover {
+    color: hsl(14, 88%, 65%);
+    cursor: pointer;
+  }
+  .info .info__question-container .question .arrow-icon:hover {
+    cursor: pointer;
+  }
+  .info .info__question-container .answer {
+    font-size: 0.87rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

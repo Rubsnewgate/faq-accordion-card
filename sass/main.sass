@@ -1,0 +1,171 @@
+@use 'guide.sass'
+
+// Main container
+.main
+	display: grid
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr))
+	grid-template-rows: 7.5rem auto
+	width: min(100%, 56.25rem)
+	margin: 7rem auto 0
+	font-family: guide.$primary-font
+	background-color: white
+	border-radius: 1.25rem
+
+// hero Section
+.hero
+	position: relative
+
+	&__background
+		position: relative
+		width: 100%
+		height: 100%
+		overflow: visible
+
+	&__background-img
+		position: absolute
+		top: 0
+		left: calc(50% - 120px)
+		width: 15rem
+		height: 6.5rem
+		background-image: url(../assets/icons/bg-pattern-mobile.svg)
+		background-repeat: no-repeat
+		rotate: 0deg
+
+	&__illustration
+		position: absolute
+		top: -6.25rem
+		left: calc(50% - 7rem)
+		width: 13.75rem
+		height: 11.25rem
+		background-image: url(../assets/icons/illustration-woman-online-mobile.svg)
+		background-repeat: no-repeat
+
+	&__box-icon
+		visibility: hidden
+
+// Info
+.info
+	@include guide.flexbox(column, center, start, 1.5rem)
+	padding: 1rem
+
+	&__title
+		font-size: 1.25rem
+		text-align: center
+		color: hsl(238, 29%, 16%)
+		text-transform: uppercase
+
+	&__container
+		@include guide.flexbox(column, null, null, 1.25rem)
+		width: 100%
+
+		.info__question-container
+			justify-content: space-between
+			width: 100%
+			color: hsl(240, 6%, 50%)
+			border-bottom: 1px solid hsl(240, 5%, 91%)
+
+			&[open] .question .arrow-icon
+				transform: rotate(180deg)
+
+			.question
+				@include guide.flexbox(row, space-between, center)
+				font-size: 1rem
+
+				span
+					width: 90%
+
+
+				.arrow-icon
+					width: 0.75rem
+					height: 0.5rem
+					transition: transform 500ms ease-in-out
+
+					@media screen and (prefers-reduced-motion: reduce)
+						transition: transform 0.1s ease
+
+			.answer
+				font-size: 0.75rem
+				width: 95%
+				padding: 0.25rem 0
+				color: hsl(240, 6%, 50%)
+
+// Breakpoints
+@media screen and (min-width: 42.375rem)
+	.main
+		grid-template-rows: 1fr
+		min-height: 32.5rem
+		margin: 0 auto
+
+	.hero
+		&__background
+			overflow: hidden
+
+			&-img
+				top: -17rem
+				left: -40.75rem
+				width: 60.25rem
+				height: 59rem
+				background-image: url(../assets/icons/bg-pattern-desktop.svg)
+
+		&__illustration
+			width: 30rem
+			height: 22.5rem
+			top: calc(50% - 11.25rem)
+			left: -7.75rem
+			background-image: url(../assets/icons/illustration-woman-online-desktop.svg)
+
+		&__box-icon
+			visibility: hidden
+
+	.info
+		justify-content: center
+
+		&__container
+			gap: 2rem
+
+			.info__question-container
+				width: 90%
+
+@media screen and (min-width: 57.5rem)
+	.hero
+		&__background
+			&-img
+				left: -36.25rem
+				transform: rotateY(180deg)
+
+		&__illustration
+			left: -4.5rem
+
+		&__box-icon
+			visibility: visible
+			position: absolute
+			top: calc(50% - 4.75rem)
+			left: -5.75rem
+
+		.question
+			span
+				width: 100%
+
+	.info
+		height: 100%
+		padding: 1.25rem 0.5rem
+
+		&__title
+			font-size: 1.75rem
+
+		.info__question-container
+			width: 95%
+
+			.question
+				font-size: 1.25rem
+
+				&:hover
+					color: hsl(14, 88%, 65%)
+					cursor: pointer
+
+				.arrow-icon
+					&:hover
+						cursor: pointer
+
+			.answer
+				font-size: 0.87rem

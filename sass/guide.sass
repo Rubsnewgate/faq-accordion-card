@@ -1,44 +1,38 @@
-// primary Colors
+// Primary colors
 $very-dark-desaturated-blue: hsl(238, 29%, 16%)
 $soft-red: hsl(14, 88%, 65%)
 
-// secondary Colors
+// Secondary colors
 $soft-violet: hsl(273, 75%, 66%)
 $soft-blue: hsl(240, 73%, 65%)
 $light-grayish-blue: hsl(240, 5%, 91%)
 
-// typography
+// Typography
 $primary-font: 'Kumbh Sans', sans-serif
 
-// font Colors
+// Font colors
 $very-dark-grayish-blue: hsl(237, 12%, 33%)
 $dark-grayish-blue: hsl(240, 6%, 50%)
 
-// general Resets
-*
+// Resets
+*, *::before, *::after
 	box-sizing: border-box
 
-html
-	font-size: 62.5%
+*
+	margin: 0
 
 body
 	display: grid
-	place-content: center
+	align-items: center
 	width: 100%
 	min-height: 100vh
-	margin: 0
-	padding: 0 10px
+	padding: calc(0.5rem + 1.5625vw)
 	background-image: linear-gradient(to bottom, $soft-violet, $soft-blue)
 
-// mixins
+// Layout
 @mixin flexbox($direction:null, $justify:null, $align:null, $gap:null)
 	display: flex
 	flex-direction: $direction
 	justify-content: $justify
 	align-items: $align
 	gap: $gap
-
-// breakpoints
-@media screen and (max-width: 541px)
-	body
-		padding: 120px 10px 20px 10px
